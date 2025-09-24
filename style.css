@@ -1,0 +1,155 @@
+h1 {
+  margin-bottom: 40px;
+}
+
+.categories {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+button {
+  width: 100%;
+  margin-block: 10px;
+  background-color: gray;
+}
+body {
+  background-color: lightblue;
+}
+
+.side_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+  width: 100%;
+}
+.produktliste {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  gap: inherit;
+}
+img {
+  width: 100%;
+}
+
+/*** Knap farver ***/
+#forår {
+  background-color: #a8e6a3;
+}
+
+#sommer {
+  background-color: #ffd54f;
+}
+
+#efterår {
+  background-color: #ff7043;
+}
+
+#vinter {
+  background-color: #90caf9;
+}
+#udsolgt1 {
+  background: brown;
+  color: white;
+}
+
+/*** Desktop layout **/
+@media screen and (min-width: 799px) {
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #c8e6c9, #fffde7, #ffe0b2, #e1f5fe);
+  }
+  img {
+    width: 100%;
+  }
+  #product {
+    color: grey;
+  }
+
+  #button_header {
+    color: black;
+  }
+
+  /** Produkt side **/
+  .produkt_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    margin-left: 60px;
+  }
+  .product_image {
+    width: 100%;
+    max-width: 500px;
+  }
+  .køb_boks {
+    background: #e59515;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+  }
+  #udsolgt {
+    filter: grayscale(99%);
+  }
+  button {
+    border-radius: 50%;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  /**** Årstid knapper **/
+  #forår {
+    transition: transform 0.2s ease;
+    background-color: #a8e6a3;
+  }
+  #forår:hover {
+    transform: scale(1.1);
+  }
+
+  #sommer {
+    transition: transform 0.2s ease;
+    background-color: #ffd54f;
+  }
+  #sommer:hover {
+    transform: scale(1.1);
+  }
+
+  #efterår {
+    transition: transform 0.2s ease;
+    background-color: #ff7043;
+  }
+  #efterår:hover {
+    transform: scale(1.1);
+  }
+
+  #vinter {
+    transition: transform 0.2s ease;
+    background-color: #90caf9;
+  }
+
+  #vinter:hover {
+    transform: scale(1.1);
+  }
+  #udsolgt1 {
+    background: brown;
+    color: white;
+  }
+
+  article {
+    transition: transform 0.2s ease;
+  }
+  article:hover {
+    transform: scale(1.1);
+  }
+}
