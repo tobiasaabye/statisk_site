@@ -156,4 +156,50 @@ img {
     text-decoration: none;
     color: inherit;
   }
+  .soldOut .imageContainer p {
+    display: inline-block;
+    color: red;
+    rotate: 10deg;
+    font-size: 4rem;
+    border: 2px solid red;
+    border-radius: 0.5rem;
+    /* opacity: 1; */
+  }
+
+  .test {
+    display: none;
+  }
+
+  .imageContainer {
+    display: grid;
+    > * {
+      grid-area: 1 / 1;
+      place-self: center center;
+    }
+  }
+  p {
+    position: relative;
+  }
+  .discounted_container {
+    display: none;
+  }
+
+  .discount .discounted_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .discount .price {
+    text-decoration: line-through;
+  }
+
+  .discounted_container p:nth-child(2) {
+    color: red;
+    background-color: white;
+  }
+  .buttons button {
+    background-color: black;
+    color: white;
+    text-decoration: solid;
+  }
 }

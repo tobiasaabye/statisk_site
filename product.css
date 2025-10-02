@@ -1,0 +1,21 @@
+.produkt_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+img {
+  width: 100%;
+  border: 3px solid;
+  border-color: #0f2db9;
+}
+
+.køb_boks {
+  background-color: beige;
+  border: 3px solid;
+  border-color: #0f2db9;  
+}
+.midt {
+  border: 3px solid;
+  border-color: #0f2db9;
+}

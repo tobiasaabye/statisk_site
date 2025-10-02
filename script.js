@@ -1,18 +1,39 @@
-console.log("Dokument loaded...");
+console.log("Hej fra product.js");
 
-const id = 1164;
-const productUrl = "https://kea-alt-del.dk/t7/api/products/" + id;
-const productcontainer = document.querySelector("produkt_container");
+const id = new URLSearchParams(window.location.search).get("id");
+const productcontainer = document.querySelector(".produkt_container");
 
-console.log("product: ", productUrl);
+getData(`https://kea-alt-del.dk/t7/api/products/${id}`);
 
-function getData() {
-  fetch(productUrl).then((res) => res.json().then((data) => Show(data)));
+function getData(url) {
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => showProduct(data));
 }
+function showProduct(product) {
+  console.log("showProduct: ", product);
 
-function show(data){
-    console.log ("shows data er", data);
+  productcontainer.innerHTML += `<div class="billede">
+          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" />
+          </div>
+          <div class="midt">
+          <h2>${product.productdisplayname}</h2>
+          <h5>${product.brandname} | ${product.usagetype}</h5>
+    
+          </div>
+      <div class="køb_boks">
+            <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
+            <p>Nike | Tshirts</p>x$
+            <label for="size">Choose a size</label><br>
+            <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select><br>
 
-    produkt_container.innerHTML = 
-   //alt du vil have ind på hjemmesiden
+             Now DKK <span>${product.price - (product.price * product.discount) / 100}</span>,-
+
+            <button id="basket">Add to basket</button>
+        </div>`;
 }
